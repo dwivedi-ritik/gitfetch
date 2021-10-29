@@ -1,6 +1,6 @@
-gitfetch
+### Gitfetch
 
-a shell script for gitfetch
+a shell script for git-fetch
 <p>
     <img src="preview.png">
 </p>
@@ -8,6 +8,7 @@ a shell script for gitfetch
 ### Install
 make sure you have `jq` installed
 
+
 ```shell
-git clone 
+git clone https://github.com/dwivedi-ritik/gitfetch.git
 ```
