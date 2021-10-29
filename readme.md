@@ -2,7 +2,7 @@ gitfetch
 
 a shell script for gitfetch
 <p>
-    <img src="image.png>
+    <img src="image-min.png>
 </p>
 
 ### Install

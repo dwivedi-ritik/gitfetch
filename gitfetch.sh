@@ -37,31 +37,32 @@ url=$( echo $data | jq .url)
 repos_count=$( echo $data | jq .public_repos)
 git_ver=$(git version)
 hostname=$(hostname -i)
+machine=$(uname -o)
 tput cup 2 2
 print "$ascii_art"
 
 pos=4
 
 tput cup $((pos)) 30
+printf "$col OS :$yell_col $machine $end\n"
+tput cup $((pos + 1)) 30
 printf "$col Name :$yell_col $name $end\n"
-tput cup $((pos+1)) 30
+tput cup $((pos+2)) 30
 printf "$col Host :$yell_col $hostname $end\n"
-tput cup $((pos + 2)) 30
-printf "$col Bio :$yell_col $bio $end\n"
 tput cup $((pos + 3)) 30
-printf "$col Follower :$yell_col $follower $end\n"
+printf "$col Bio :$yell_col $bio $end\n"
 tput cup $((pos + 4)) 30
-printf "$col Following :$yell_col $repos_count $end\n"
+printf "$col Follower :$yell_col $follower $end\n"
 tput cup $((pos + 5)) 30
-printf "$col Repos :$yell_col $repos_count $end\n"
+printf "$col Following :$yell_col $repos_count $end\n"
 tput cup $((pos + 6)) 30
+printf "$col Repos :$yell_col $repos_count $end\n"
+tput cup $((pos + 7)) 30
 printf "$col Url :$yell_col $url $end\n"
-tput cup $$((pos + 7)) 30
+tput cup $((pos + 8)) 30
 printf "$col Git Ver :$yell_col $git_ver $end\n"
 
-
-
-tput cup 13 30
+tput cup 14 30
 printf " $c1$c2$c3$c4$c5$c6$c7$c8\n"
 
 
