@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/bash
 
 usr_name=$1
 url="https://api.github.com/users"

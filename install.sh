@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/bash
 
 distro=$(awk -F '=' 'FNR == 3 { print $2 }' /etc/os-release)
 
