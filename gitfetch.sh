@@ -28,12 +28,12 @@ c8="\033[7;37m  \033[0;1;37m"
 data=$(curl -s $url/$usr_name)
 
 
-name=$( echo $data | jq .name)
-login=$( echo $data | jq .login)
-bio=$( echo $data | jq .bio)
-follower=$( echo $data | jq .followers)
-following=$( echo $data | jq .following)
-url=$( echo $data | jq .url)
+name=$( echo $data | jq -r .name)
+login=$( echo $data | jq -r .login)
+bio=$( echo $data | jq -r .bio)
+follower=$( echo $data | jq -r .followers)
+following=$( echo $data | jq -r .following)
+url=$( echo $data | jq -r .url)
 repos_count=$( echo $data | jq .public_repos)
 git_ver=$(git version)
 hostname=$(hostname -i)
