@@ -7,10 +7,8 @@ a shell script for git-fetch
 
 ### Install
 
-run `./install.sh`
-
-then
-
 ```shell
 git clone https://github.com/dwivedi-ritik/gitfetch.git
 ```
+then run `./install.sh`
+
