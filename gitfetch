@@ -1,4 +1,4 @@
-#! /usr/bin/zsh
+#!/bin/zsh
 
 usr_name=$1
 url="https://api.github.com/users"
@@ -45,12 +45,12 @@ c7="\033[7;36m  \033[0;1;36m"
 c8="\033[7;37m  \033[0;1;37m"
 
 
-data=$(curl -s $url/$usr_name)
+data=$(curl -s $url/$usr_name) 
 
 
 name=$( echo $data | jq -r .name)
 login=$( echo $data | jq -r .login)
-bio=$( echo $data | jq -r .bio)
+bio=${$( echo $data | jq -r .bio):0:32}
 follower=$( echo $data | jq -r .followers)
 following=$( echo $data | jq -r .following)
 url=$( echo $data | jq -r .url)

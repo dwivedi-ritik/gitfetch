@@ -1,4 +1,4 @@
-#! /usr/bin/zsh
+#!/bin/zsh
 
 distro=$(awk -F '=' 'FNR == 3 { print $2 }' /etc/os-release)
 
@@ -13,7 +13,7 @@ fi
 
 chmod +x gitfetch
 
-echo "Copping into /usr/bin folder"
+echo "Copying into /usr/bin folder"
 
 sudo cp gitfetch /usr/bin
 
