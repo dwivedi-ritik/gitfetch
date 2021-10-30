@@ -50,7 +50,7 @@ data=$(curl -s $url/$usr_name)
 
 name=$( echo $data | jq -r .name)
 login=$( echo $data | jq -r .login)
-bio=${$( echo $data | jq -r .bio):0:32}
+bio=$( echo $data | jq -r .bio)
 follower=$( echo $data | jq -r .followers)
 following=$( echo $data | jq -r .following)
 url=$( echo $data | jq -r .url)
@@ -62,7 +62,7 @@ machine=$(uname -o)
 clear
 
 tput cup 1 1
-print "$ascii_art"
+printf "$ascii_art"
 
 pos=2
 

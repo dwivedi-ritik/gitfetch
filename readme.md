@@ -17,3 +17,8 @@ $ git clone https://github.com/dwivedi-ritik/gitfetch.git
 ```
 then run `./install.sh`
 
+### Remove
+
+```shell
+gitfetch -rm
+```
