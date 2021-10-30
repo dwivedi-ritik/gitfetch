@@ -6,8 +6,10 @@ a shell script for git-fetch
 </p>
 
 ### Install
-make sure you have `jq` installed
 
+run `./install.sh`
+
+then
 
 ```shell
 git clone https://github.com/dwivedi-ritik/gitfetch.git

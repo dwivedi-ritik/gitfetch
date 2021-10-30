@@ -7,13 +7,33 @@ col="\033[0;94m"
 yell_col="\033[0;37m"
 end="\033[0m"
 
-ascii_art=$(cat art.txt)
 
+#ascii_art=$(cat art.txt)
+
+ascii_art="⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⣀⢤⡒⠉⠁⠀⠒⢂⡀⠀⠀⠀⠈⠉⣒⠤⣀⠀⠀⠀⠀
+⠀⠀⣠⠾⠅⠈⠀⠙⠀⠀⠀⠈⠀⠀⢀⣀⣓⡀⠉⠀⠬⠕⢄⠀⠀
+⠀⣰⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡤⠶⢦⡀⠑⠀⠀⠀⠀⠈⢧⠀
+⠀⡇⠀⠀⠀⠀⠀⢤⣀⣀⣀⣀⡀⢀⣀⣀⠙⠀⠀⠀⠀⠀⠀⢸⡄
+⠀⢹⡀⠀⠀⠀⠀⡜⠁⠀⠀⠙⡴⠁⠀⠀⠱⡄⠀⠀⠀⠀⠀⣸⠀
+⠀⠀⠱⢄⡀⠀⢰⣁⣒⣒⣂⣰⣃⣀⣒⣒⣂⢣⠀⠀⠀⢀⡴⠁⠀
+⠀⠀⠀⠀⠙⠲⢼⡀⠀⠙⠀⢠⡇⠀⠛⠀⠀⣌⣀⡤⠖⠉⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⢸⡗⢄⣀⡠⠊⠈⢦⣀⣀⠔⡏⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠈⡇⠀⢰⠁⠀⠀⠀⢣⠀⠀⣷⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⣠⠔⠊⠉⠁⡏⠀⠀⠀⠀⠘⡆⠤⠿⣄⣀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⣧⠸⠒⣚⡩⡇⠀⠀⠀⠀⠀⣏⣙⠒⢴⠈⡇⠀⠀⠀⠀
+⠀⠀⠀⠀⠈⠋⠉⠀⠀⢳⡀⠀⠀⠀⣸⠁⠈⠉⠓⠚⠁⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠓⠛⠛"
 if [[ -z $usr_name ]]; then
     echo "Username don't seem to be appear"
     exit 1
 fi
 
+if [[ $1 == "-rm" ]]; then
+    sudo rm /usr/bin/gitfetch
+    echo "Removed"
+    exit 1
+fi
 
 c1="\033[7;30m  \033[0;1;30m"
 c2="\033[7;31m  \033[0;1;31m"
@@ -38,10 +58,13 @@ repos_count=$( echo $data | jq .public_repos)
 git_ver=$(git version)
 hostname=$(hostname -i)
 machine=$(uname -o)
-tput cup 2 2
+
+clear
+
+tput cup 1 1
 print "$ascii_art"
 
-pos=4
+pos=2
 
 tput cup $((pos)) 30
 printf "$col OS :$yell_col $machine $end\n"
