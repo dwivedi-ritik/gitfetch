@@ -75,4 +75,4 @@ printf "$col Git Ver :$yell_col $git_ver $end\n"
 tput cup 20 35
 printf " $c1$c2$c3$c4$c5$c6$c7$c8\n"
 
-rm temp.png
+
