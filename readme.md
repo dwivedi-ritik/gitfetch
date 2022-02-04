@@ -1,18 +1,24 @@
 ### Gitfetch
 
-a shell script for git-fetch
-
-
-<p>
-    <img src="preview.png">
-</p>
-
+A fetch tool which fetch your gitprofile.
 
 Try 
 
 ```shell
 $ gitfetch your_usrname
 ```
+
+```shell
+$ gitfetch torvalds
+```
+<p>
+    <img src="./images/preview.png" width="70%">
+</p>
+
+### Dependency
+
+- You must have [ascii-image-converter](https://github.com/TheZoraiz/ascii-image-converter)
+
 
 ### Install
 

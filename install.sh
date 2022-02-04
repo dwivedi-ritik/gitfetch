@@ -12,6 +12,7 @@ if [[ distro -eq "arch" ]]; then
 	cd ..
 	rm -rf ascii-image-converter-git
 	sudo pacman -Syu jq
+	
 elif [[ distro -eq "ubuntu" ]];  then
 	echo 'deb [trusted=yes] https://apt.fury.io/ascii-image-converter/ /' | sudo tee /etc/apt/sources.list.d/ascii-image-converter.list
 	sudo apt update
