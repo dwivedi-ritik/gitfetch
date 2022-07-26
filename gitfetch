@@ -6,7 +6,7 @@ url="https://api.github.com/users"
 col="\033[0;94m"
 yell_col="\033[0;37m"
 end="\033[0m"
-
+bold="\033[1m"
 
 if [[ -z $usr_name ]]; then
     echo "Username don't seem to be appear"
@@ -37,7 +37,7 @@ login=$( echo $data | jq -r .login)
 bio=$( echo $data | jq -r .bio | tr -d '\r\n')
 follower=$( echo $data | jq -r .followers)
 following=$( echo $data | jq -r .following)
-url=$( echo $data | jq -r .url)
+profile=$( echo $data | jq -r .html_url)
 repos_count=$( echo $data | jq .public_repos)
 git_ver=$(git version)
 hostname=$(hostname -i)
@@ -47,30 +47,29 @@ clear
 
 tput cup 1 1
 
-echo $data | jq .avatar_url | xargs curl -s -o "temp.png"
+url=$(echo $data | jq .avatar_url)
 
-ascii-image-converter temp.png -C -b -c --threshold 100 -H 16 
-
+echo $url | xargs ascii-image-converter -C -b -c --threshold 100 -H 16 
 pos=2
 
 tput cup $((pos)) 35
-printf "$col OS :$yell_col $machine $end\n"
+printf "$col $bold OS :$yell_col $machine $end\n"
 tput cup $((pos + 1)) 35
-printf "$col Name :$yell_col $name $end\n"
+printf "$col $bold Name :$yell_col $name $end\n"
 tput cup $((pos+2)) 35
-printf "$col Host :$yell_col $hostname $end\n"
+printf "$col $bold Host :$yell_col $hostname $end\n"
 tput cup $((pos + 3)) 35
-printf "$col Bio :$yell_col $bio $end\n"
+printf "$col $bold Bio :$yell_col $bio $end\n"
 tput cup $((pos + 4)) 35
-printf "$col Follower :$yell_col $follower $end\n"
+printf "$col $bold Follower :$yell_col $follower $end\n"
 tput cup $((pos + 5)) 35
-printf "$col Following :$yell_col $repos_count $end\n"
+printf "$col $bold Following :$yell_col $repos_count $end\n"
 tput cup $((pos + 6)) 35
-printf "$col Repos :$yell_col $repos_count $end\n"
+printf "$col $bold Repos :$yell_col $repos_count $end\n"
 tput cup $((pos + 7)) 35
-printf "$col Url :$yell_col $url $end\n"
+printf "$col $bold Url :$yell_col $profile $end\n"
 tput cup $((pos + 8)) 35
-printf "$col Git Ver :$yell_col $git_ver $end\n"
+printf "$col $bold Git Ver :$yell_col $git_ver $end\n"
 
 tput cup 20 35
 printf " $c1$c2$c3$c4$c5$c6$c7$c8\n"
